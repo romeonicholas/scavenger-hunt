@@ -1,7 +1,7 @@
 from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
-app.config.from_object("config")
+app.config.from_object("app.config")
 
 
 # first view
@@ -34,5 +34,3 @@ def get_users():
 
 # game in progress page
 # looks for session in progress based on user, displays current step
-if __name__ == "__main__":
-    app.run()
