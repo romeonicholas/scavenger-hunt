@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 app.config.from_object("config")
@@ -6,10 +6,10 @@ app.config.from_object("config")
 
 # first view
 # returns to this on timeout/logout
-# containd dynamic "hello" from db
+# contains dynamic "hello" from db
 @app.route("/")
 def index():
-    return "Welcome to the scavenger hunt!"
+    return render_template("index.html")
 
 
 # new player page
