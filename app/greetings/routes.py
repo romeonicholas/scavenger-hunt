@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from .models import Greeting
 
 blueprint = Blueprint("greetings", __name__, url_prefix="/greetings")
 
