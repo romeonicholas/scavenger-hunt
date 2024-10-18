@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 from .models import Greeting
-from app.scripts.db_utils import get_random_greeting
+from .db_utils import get_random_greeting
 
 blueprint = Blueprint(
     "greetings",

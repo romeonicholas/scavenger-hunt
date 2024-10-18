@@ -7,14 +7,14 @@
 <p>{{ riddle.clue_2.replace('\n', '<br />')|safe }}</p>
 <p>{{ riddle.clue_3.replace('\n', '<br />')|safe }}</p>
 
-{% for answer in riddle_answers %}
+{% for answer in answers %}
 <div>
   <img
-    src="/static/images/{{ answer.answer.image }}"
+    src="/static/images/{{ answer.image }}"
     width="60"
-    alt="{{ answer.answer.text }}"
+    alt="{{ answer.text }}"
   />
-  <span>{{ answer.answer.text }} </span>
+  <span>{{ answer.text }} </span>
   {% if answer.is_correct %}
   <span>(it's this one)</span>
   {% endif %}

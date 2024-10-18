@@ -1,5 +1,5 @@
-from app.greetings.models import Greeting
 from sqlalchemy.sql import func
+from app.greetings.models import Greeting
 
 
 def get_random_greeting():

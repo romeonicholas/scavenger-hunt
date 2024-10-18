@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
-from .models import Riddle, Answer, RiddleAnswer
+from .db_utils import get_riddle, get_answers
+
 
 blueprint = Blueprint(
     "riddles",
@@ -20,12 +21,9 @@ def index():
 @blueprint.get("/riddles/<int:riddle_id>")
 def show(riddle_id):
     try:
-        riddle = Riddle.query.get(riddle_id)
-        print(riddle)
-        riddle_answers = RiddleAnswer.query.filter_by(riddle_id=riddle_id).all()
-        print(riddle_answers)
-        return render_template(
-            "riddles/show.html", riddle=riddle, riddle_answers=riddle_answers
-        )
+        riddle = get_riddle(riddle_id)
+        answers = get_answers(riddle_id)
+
+        return render_template("riddles/show.html", riddle=riddle, answers=answers)
     except Exception as e:
         print(e)
