@@ -20,11 +20,30 @@ for user in users:
 
 
 greetings = [
-    {"english_text": "066"},
-    {"english_text": "Hi"},
-    {"english_text": "Hey"},
-    {"english_text": "Yo"},
-    {"english_text": "Greetings"},
+    {
+        "english_text": "Hello",
+        "indiginous_text": "ᏂꮒᎦꭶ",
+        "language": "English",
+        "tribe": "america",
+    },
+    {
+        "english_text": "Hi",
+        "indiginous_text": "Hoo",
+        "language": "abc",
+        "tribe": "cherokee",
+    },
+    {
+        "english_text": "G'day",
+        "indiginous_text": "Haa",
+        "language": "def",
+        "tribe": "osage",
+    },
+    {
+        "english_text": "Greetings",
+        "indiginous_text": "Heee",
+        "language": "ghi",
+        "tribe": "hawk",
+    },
 ]
 
 for greeting in greetings:
