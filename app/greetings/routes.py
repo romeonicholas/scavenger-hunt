@@ -2,10 +2,13 @@ from flask import Blueprint, render_template
 from .models import Greeting
 from app.scripts.db_utils import get_random_greeting
 
-blueprint = Blueprint("greetings", __name__, url_prefix="/greetings")
+blueprint = Blueprint(
+    "greetings",
+    __name__,
+)
 
 
-@blueprint.get("/")
+@blueprint.get("/greetings")
 def index():
     try:
         greetings = Greeting.query.all()
@@ -15,7 +18,7 @@ def index():
         return render_template("greetings/show.html", greetings=[])
 
 
-@blueprint.get("/random")
+@blueprint.get("/greetings/random")
 def random():
     try:
         random_greeting = get_random_greeting()

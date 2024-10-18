@@ -6,6 +6,7 @@ from . import simple_pages, users, greetings
 def create_app():
     app = Flask(__name__)
     app.config.from_object("app.config")
+    app.url_map.strict_slashes = False
 
     register_extensions(app)
     register_blueprints(app)
