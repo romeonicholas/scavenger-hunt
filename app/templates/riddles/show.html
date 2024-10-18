@@ -2,10 +2,19 @@
 {% block body %}
 <h1>Riddle #{{ riddle.id }}</h1>
 
-<p>{{ riddle.question }}</p>
+<h2>Clues</h2>
+
+<h3>Clue 1</h3>
 <p>{{ riddle.clue_1.replace('\n', '<br />')|safe }}</p>
+<h3>Clue 2</h3>
 <p>{{ riddle.clue_2.replace('\n', '<br />')|safe }}</p>
+<h3>Clue 3</h3>
 <p>{{ riddle.clue_3.replace('\n', '<br />')|safe }}</p>
+
+<h2>Question</h2>
+<p>{{ riddle.question }}</p>
+
+<h2>Answers</h2>
 
 {% for answer in answers %}
 <div>
@@ -16,7 +25,7 @@
   />
   <span>{{ answer.text }} </span>
   {% if answer.is_correct %}
-  <span>(it's this one)</span>
+  <span>(correct answer)</span>
   {% endif %}
 </div>
 {% endfor %} {% endblock %}
