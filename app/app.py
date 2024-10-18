@@ -24,7 +24,3 @@ def register_blueprints(app: Flask):
 def register_extensions(app: Flask):
     db.init_app(app)
     migrate.init_app(app, db, compare_type=True)
-
-
-# game in progress page
-# looks for session in progress based on user, displays current step
