@@ -3,4 +3,10 @@ block body %}
 <h1>All Greetings</h1>
 
 <p>Greetings listed here</p>
+
+<ul>
+  {% for greeting in greetings %}
+  <li>{{ greeting.text }}</li>
+  {% endfor %}
+</ul>
 {% endblock %}
