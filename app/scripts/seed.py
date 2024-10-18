@@ -20,11 +20,11 @@ for user in users:
 
 
 greetings = [
-    {"text": "Hello"},
-    {"text": "Hi"},
-    {"text": "Hey"},
-    {"text": "Yo"},
-    {"text": "Greetings"},
+    {"english_text": "066"},
+    {"english_text": "Hi"},
+    {"english_text": "Hey"},
+    {"english_text": "Yo"},
+    {"english_text": "Greetings"},
 ]
 
 for greeting in greetings:

@@ -18,10 +18,9 @@ def index():
 @blueprint.get("/random")
 def random():
     try:
-        random_greeting_text = get_random_greeting().text
-        return render_template(
-            "greetings/random.html", random_greeting_text=random_greeting_text
-        )
+        random_greeting = get_random_greeting()
+        return render_template("greetings/random.html", random_greeting=random_greeting)
     except Exception as e:
         print(e)  # move to log, display error in template
-        return render_template("greetings/random.html", random_greeting_text="Hello!")
+        random_greeting = {"english_text": "Hello!"}
+        return render_template("greetings/random.html", random_greeting=random_greeting)
