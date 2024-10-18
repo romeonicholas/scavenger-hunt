@@ -6,7 +6,9 @@ body %}
 
 <ul>
   {% for riddle in riddles %}
-  <!-- <li>{{ riddle.something }}</li> -->
+  <li>
+    <a href="/riddles/{{riddle.id}}">{{ riddle.id }}: {{ riddle.question }}</a>
+  </li>
   {% endfor %}
 </ul>
 {% endblock %}
