@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}All Rounds{% endblock %} {% block
+body %}
+<h1>All Rounds</h1>
+
+<p>Rounds listed here</p>
+
+<ul>
+  {% for round in rounds %}
+  <!-- <li>{{ round.something }}</li> -->
+  {% endfor %}
+</ul>
+{% endblock %}
