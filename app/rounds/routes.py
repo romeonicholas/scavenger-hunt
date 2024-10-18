@@ -10,7 +10,7 @@ blueprint = Blueprint(
 def index():
     try:
         # query rounds
-        return render_template("rounds/show.html", rounds=[])
+        return render_template("rounds/index.html", rounds=[])
     except Exception as e:
         print(e)  # move to log, display error in template
-        return render_template("rounds/show.html", rounds=[])
+        return render_template("rounds/index.html", rounds=[])

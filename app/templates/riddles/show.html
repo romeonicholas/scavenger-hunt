@@ -1,12 +1,22 @@
-{% extends 'base.html' %} {% block title %}All Riddles{% endblock %} {% block
-body %}
-<h1>All Riddles</h1>
+{% extends 'base.html' %} {% block title %}Riddle #{{ riddle.id }}{% endblock %}
+{% block body %}
+<h1>Riddle #{{ riddle.id }}</h1>
 
-<p>Riddles listed here</p>
+<p>{{ riddle.question }}</p>
+<p>{{ riddle.clue_1.replace('\n', '<br />')|safe }}</p>
+<p>{{ riddle.clue_2.replace('\n', '<br />')|safe }}</p>
+<p>{{ riddle.clue_3.replace('\n', '<br />')|safe }}</p>
 
-<ul>
-  {% for riddle in riddles %}
-  <!-- <li>{{ riddle.something }}</li> -->
-  {% endfor %}
-</ul>
-{% endblock %}
+{% for answer in riddle_answers %}
+<div>
+  <img
+    src="/static/images/{{ answer.answer.image }}"
+    width="60"
+    alt="{{ answer.answer.text }}"
+  />
+  <span>{{ answer.answer.text }} </span>
+  {% if answer.is_correct %}
+  <span>(it's this one)</span>
+  {% endif %}
+</div>
+{% endfor %} {% endblock %}

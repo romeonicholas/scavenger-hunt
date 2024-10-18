@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}All Riddles{% endblock %} {% block
+body %}
+<h1>All Riddles</h1>
+
+<p>Riddles listed here</p>
+
+<ul>
+  {% for riddle in riddles %}
+  <!-- <li>{{ riddle.something }}</li> -->
+  {% endfor %}
+</ul>
+{% endblock %}

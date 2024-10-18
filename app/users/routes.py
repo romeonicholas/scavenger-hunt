@@ -11,7 +11,7 @@ blueprint = Blueprint(
 # displays all/most recent player badges(name, avatar, color)
 @blueprint.get("/users")
 def get_users():
-    return render_template("users/show.html")
+    return render_template("users/index.html")
 
 
 # new player page

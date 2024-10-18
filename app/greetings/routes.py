@@ -12,10 +12,10 @@ blueprint = Blueprint(
 def index():
     try:
         greetings = Greeting.query.all()
-        return render_template("greetings/show.html", greetings=greetings)
+        return render_template("greetings/index.html", greetings=greetings)
     except Exception as e:
         print(e)  # move to log, display error in template
-        return render_template("greetings/show.html", greetings=[])
+        return render_template("greetings/index.html", greetings=[])
 
 
 @blueprint.get("/greetings/random")
